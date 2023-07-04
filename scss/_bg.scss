@@ -1,0 +1,22 @@
+@use "common";
+
+.bg__wrapper {
+    position: relative;
+
+  &:before {
+    background: #3e3e3e;
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 65px;
+	width: 100%;
+
+		@include common.mq('sp-up') {
+			bottom: 138px;
+			top: 146px;
+			width: 980 / 1280 * 100%;
+		}
+	}
+}

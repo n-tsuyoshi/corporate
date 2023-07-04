@@ -1,0 +1,130 @@
+@use "common";
+
+.access {
+position: relative;
+z-index: 1;
+
+@include common.mq('sp-up') {
+	display: grid;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	grid-template-columns: 414px 1fr;
+	grid-template-rows: auto 1fr;
+	max-width: common.$max-inner;
+    margin: 120px auto 0;
+}
+
+@include common.mq('sp') {
+    padding: 40px 16px 60px;
+}
+
+}
+
+.access__inner {
+
+    @include common.mq('sp-up') {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+}
+
+
+.access__title {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: common.$font-family-english;
+    padding-left: 58px;
+    padding-top: 4px;
+
+    @include common.mq('sp') {
+        font-size: 30px;
+        padding-left: 0;
+    }
+}
+
+.access__address {
+    color: #fff;
+
+    @include common.mq('sp-up') {
+        margin-top: 58px;
+        padding-left: 58px;
+        line-height: (24 / 16);
+    }
+
+    @include common.mq('sp') {
+        line-height: (20 / 14);
+		font-size: 14px;
+        margin-top: 30px;
+        padding-left: 0;
+    }
+}
+
+.access__map {
+    
+    @include common.mq('sp-up') {
+		grid-area: 1 / 2 / 3 / 3;
+        width: 726px;
+        max-width: 100%;
+        margin-left: auto;
+    }
+    
+}
+
+.iframe__wrap {
+    width: 100%;
+    padding-top: 520 / 726 * 100%;
+    position: relative;
+
+    @include common.mq('sp') {
+        padding-top: 240 / 340 * 100%;
+        margin-top: 22px;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+}
+
+.access__btn {
+    @include common.mq('sp-up') {
+        grid-area: 2 / 1 / 3 / 2;
+        margin-top: 30px;
+        padding-left: 58px;
+    }
+
+    @include common.mq('sp') {
+        margin-top: 16px;
+    }
+}
+
+.map__btn {
+    width: 314px;
+    display: inline-block;
+    padding: 20px 60px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 500;
+    background: common.$color-main;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    font-family: common.$font-family-english;
+
+    &:hover {
+        transition: all 0.3s ease 0s;
+        background: #fff;
+        color: common.$color-main;
+    }
+    
+    @include common.mq('sp') {
+        width: 339px;
+        padding: 16px 20px;
+    }
+}

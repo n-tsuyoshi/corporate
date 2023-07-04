@@ -1,0 +1,75 @@
+@use "common";
+
+.top {
+    background-image: url(../img/mv.png);
+    background-position: 24% center;
+    background-size: cover;
+    height: 648px;
+	position: relative;
+
+    @include common.mq('sp-up') {
+        background-position: center center;
+    }
+
+    @include common.mq('sp') {
+        height: 668px;
+    }
+}
+
+.top__inner {
+    @include common.mq('sp-up') {
+		margin: 0 auto;
+		width: 1240px;
+		padding: 228px 12px 0 0;
+		max-width: 100%;
+	}
+
+	@include common.mq('sp') {
+		padding: 220px 16px 0;
+        width: 100%;
+	}
+}
+
+.top__message {
+
+    @include common.mq('sp-up') {
+		margin-left: auto;
+		max-width: 600px;
+	}
+}
+
+.top__title {
+    font-weight: bold;
+    line-height: (40 / 24);
+	text-align: left;
+    font-size: 24px;
+
+    @include common.mq('sp-up') {
+        font-size: 32px;
+        line-height: (48 / 32);
+    }
+}
+
+.top__subtitle {
+    font-weight: bold;
+    line-height: 1.45;
+    letter-spacing: 0.025em;
+    font-size: 18px;
+    margin-top: 26px;
+    
+    @include common.mq('sp') {
+        font-size: 14px;
+        line-height: (20 / 14);
+        margin-top: 20px;
+        letter-spacing: 0;
+    }
+}
+
+.top__btn {
+    margin-top: 44px;
+
+    @include common.mq('sp') {
+        margin-top: 31px;
+        text-align: center;
+    }
+}

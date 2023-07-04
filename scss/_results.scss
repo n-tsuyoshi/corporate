@@ -1,0 +1,157 @@
+@use "common";
+
+.results {
+    background: #3e3e3e;
+    margin: 58px 0 0 0;
+    max-width: calc(50vw + 600px);
+	padding: 40px 0 40px 16px;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: common.$font-family-english;
+
+	@include common.mq('sp-up') {
+		margin: 217px 0 0 auto;
+		padding: 58px 0 60px 60px;
+	}
+
+	@include common.mq('sp') {
+		padding-top: 36px;
+		margin-top: 390px;
+	}
+}
+
+.results__title {
+    color: #FFF;
+    font-family: common.$font-family-english;
+
+    @include common.mq('sp') {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 7px;
+    }
+}
+
+.results__wrapper {
+    margin-top: 67px;
+
+    @include common.mq('sp') {
+        margin-top: 48px;
+    }
+}
+
+.results__item {
+    background: #fff;
+    color: #3e3e3e;
+	display: block;
+}
+
+.results__img {
+
+    img {
+        width: 100%;
+    }
+}
+
+.results__item__text {
+    padding: 12px 16px 20px;
+
+    @include common.mq('sp') {
+        padding: 9px 12px 20px;
+    }
+}
+
+.results__sub__title {
+    font-size: 20px;
+    font-weight: bold;
+
+    @include common.mq('sp') {
+        font-size: 14px;
+    }
+}
+
+.results__copy {
+    line-height: (24px / 16px);
+    margin-top: 10px;
+    font-size: 16px;
+
+    @include common.mq('sp') {
+        font-size: 12px;
+        line-height: (18 / 12);
+    }
+}
+
+.results-pagination {
+    position: static !important;
+    margin: 34px auto 0 0;
+    padding-bottom: 5px;
+    left: 0;
+    text-align: left;
+
+    @include common.mq('sp') {
+        margin: 0 auto 0;
+        text-align: center;
+    }
+
+}
+
+.swiper-pagination-bullet[class*=-active] {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: #FFF;
+    box-shadow:0 0 0 2px #3E3E3E, 0 0 0 3px #fff;
+    
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: #FFF;
+    margin: 0 10px !important;
+    
+    
+
+}
+
+.results__btn {
+    @include common.mq('sp-up') {
+        margin: 40px 16px 0 0;
+    }
+    
+    @include common.mq('sp') {
+        text-align: center;
+        margin-top: 18px;
+    }
+}
+
+.view-btn {
+    display: inline-block;
+    border: 1px solid #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: common.$font-family-english;
+    background: common.$color-main;
+    color: #fff;
+    font-weight: 500;
+
+    &:hover {
+        transition: all 0.3s ease 0s;
+        background: #fff;
+        color: common.$color-main;
+      }
+
+      @include common.mq('sp-up') {
+        width: 289px;
+        letter-spacing: 4px;
+        font-size: 20px;
+        padding: 20px 60px;
+    }
+
+    @include common.mq('sp') {
+        font-size: 18px;
+        letter-spacing: 3.6px;
+        padding: 16px 100px;
+    }
+}

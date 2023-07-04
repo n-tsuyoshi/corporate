@@ -1,0 +1,156 @@
+@use "common";
+
+.footer {
+    background: common.$color-main;
+    padding: 64px 0 56px;
+    height: 292px;
+
+	@include common.mq('sp') {
+		padding: 40px 16px 56px;
+        text-align: center;
+        height: 395px;
+	}
+}
+
+.footer-totopLink {
+    background: #FFFFFF;
+    opacity: 0.8;
+    border: solid 1px #3e3e3e;
+    bottom: 16px;
+    display: block;
+    height: 50px;
+    position: fixed;
+    right: 16px;
+    transition: all 0.5s ease 0s;
+    width: 50px;
+	z-index: 99;
+    visibility: hidden;
+
+	@include common.mq('sp-up') {
+		bottom: 40px;
+		right: 40px;
+	}
+
+  &:after {
+    border-right: solid 3px #3e3e3e;
+    border-top: solid 3px #3e3e3e;
+    content: '';
+    display: block;
+    height: 15px;
+    left: 15px;
+    position: absolute;
+    top: 20px;
+    transform: rotate(-45deg);
+    width: 15px;
+	}
+
+	&.add-scrolled {
+        opacity: 1;
+		visibility: visible;
+	}
+}
+
+.footer__inner {
+    @include common.mq('sp-up') {
+		display: flex;
+		margin: 0 auto;
+		max-width: common.$max-inner;
+		padding: 0 120px;
+	}
+}
+
+.footer__nav {
+
+}
+
+.footer__snsList {
+    display: flex;
+
+    @include common.mq('sp') {
+        justify-content: center;
+    }
+}
+
+.footer__snsItem {
+    @include common.mq('sp') {
+		margin-right: 50px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	+ .footer-snsItem {
+		@include common.mq('sp-up') {
+			margin-left: 30px;
+		}
+	}
+}
+
+.footer__snsLink {
+    color: #fff;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    font-size: 38px;
+
+    @include common.mq('sp-up') {
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    @include common.mq('sp') {
+        font-size: 40px;
+    }
+}
+
+.footer__navList {
+    margin-top: 36px;
+
+    @include common.mq('sp') {
+        margin-top: 38px;
+    }
+}
+
+.footer__navItem {
+    &:not(:first-child) {
+        margin-top: 23px;
+    }
+}
+
+.footer__navLink {
+    color: #fff;
+}
+
+.footer__company {
+    @include common.mq('sp-up') {
+        margin-left: auto;
+        text-align: right;
+    }
+}
+
+.footer__companyName {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: common.$font-family-english;
+    margin-bottom: 15px;
+
+    @include common.mq('sp') {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 44px;
+    }
+}
+
+.footer__copyright {
+    color: #fff;
+    font-size: 12px;
+    font-family: common.$font-family-english;
+    opacity: 0.6;
+
+    @include common.mq('sp') {
+        
+    }
+}
+

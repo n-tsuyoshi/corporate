@@ -1,0 +1,80 @@
+@use "common";
+
+.price {
+    @include common.mq('sp-up') {
+		margin: 118px auto 0;
+		max-width: 1040px;
+		padding: 0 40px;
+		width: 100%;
+	}
+
+	@include common.mq('sp') {
+		margin: 0 16px;
+        padding-top: 44px;
+	}
+}
+
+.price__title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-family: common.$font-family-english;
+
+    @include common.mq('sp') {
+        font-size: 30px;
+    }
+}
+
+.price__table {
+    border: solid 1px #707070;
+    border-collapse: collapse;
+    margin-top: 62px;
+    width: 100%;
+
+    @include common.mq('sp') {
+        margin-top: 43px;
+    }
+
+    th,td {
+        font-weight: 500;
+        padding: 18px 41px;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: common.$font-family-english;
+
+        @include common.mq('sp') {
+            font-size: 20px;
+            padding: 17px 18px;
+        }
+    }
+
+    th {
+        text-align: center;
+        background: common.$color-main;
+        color: #fff;
+        width: 27.3%;
+
+        @include common.mq('sp') {
+			width: 29.3%;
+		}
+    }
+
+    td {
+        background: #fff;
+    }
+
+    tr:not(:first-child) {
+		th {
+			border-top: solid 1px #ddd;
+		}
+
+		td {
+			border-top: solid 1px #707070;
+		}
+	}
+}
+
+.price__copy {
+    font-size: 12px;
+    margin-top: 10px;
+}

@@ -1,0 +1,176 @@
+@use "common";
+
+.header {
+    height: 83px;
+    background: #FFFFFF1A;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    position: fixed;
+
+    @include common.mq('sp') {
+        height: 68px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        position: fixed;
+        z-index: 100;
+        background: #fff;
+    }
+
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
+.header__title {
+    @include common.mq('sp-up') {
+        display: none;
+    }
+
+    @include common.mq('sp') {
+        font-size: 23px;
+        font-weight: bold;
+        margin-right: auto;
+        margin-left: 16px;
+        font-family: common.$font-family-english;
+    }
+}
+
+.drawer-hamburger {
+    top: 4px;
+    z-index: 200;
+}
+
+.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
+    height: 3px;
+    width: 27px;
+}
+
+.drawer-hamburger-icon {
+    .drawer-open & {
+        background: transparent;
+
+        &::before,
+        &::after {
+        background: #fff;
+    }
+    }
+}
+
+.drawer-nav {
+    .drawer--right & {
+        right: -17.25rem;
+    }
+}
+
+.drawer--right.drawer-open .drawer-hamburger {
+    right: 17em;
+}
+
+.drawer--right.drawer-open {
+    width: 80%;
+}
+
+.header__nav {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+	justify-content: center;
+
+    @include common.mq('sp-up') {
+        height: 100%;
+    }
+
+    @include common.mq('sp') {
+        top: 0;
+        z-index: 200;
+        width: 17em;
+    }
+}
+
+.header__nav-item {
+    @include common.mq('sp') {
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.header__nav-list {
+    @include common.mq('sp-up') {
+        display: flex;
+        font-family: common.$font-family-english;
+
+        .header__nav-item {
+            &:not(:first-child) {
+                margin-left: 40px;
+            }
+        }
+    }
+    
+    @include common.mq('sp') {
+        display: block;
+        margin-top: 160px;
+    }
+}
+
+.header__nav-item-link {
+    color: common.$color-main;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: -.025em;
+
+    @include common.mq('sp') {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &::after {
+        content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            transition: all 0.3s ease 0s;
+
+            @include common.mq('sp') {
+                width: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &:hover {
+
+            &::after {
+            background: common.$color-main;
+            }
+    }
+}
+
+.drawer__background {
+    background: common.$color-main;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 150;
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
